@@ -1,9 +1,13 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h3>first assighnment</h3>
+      <h3 class="mt-2">second assighnment</h3>
+      <hr>
+      <input type="text" class="form-control mb-1" [(ngModel)]="username" (input)="checkInput()">
+      <p class="mt-3"> {{username}} </p>
+      <button class="btn btn-primary" (click)="restUsername()"
+       [disabled]= "allowReset ">Reset</button>
     </div>  
-    <app-success-alert></app-success-alert>
-    <app-warning-alert></app-warning-alert>
+ 
   </div>
 </div>

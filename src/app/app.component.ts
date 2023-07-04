@@ -11,5 +11,17 @@ import { Component } from '@angular/core';
   `]
 })
 export class AppComponent {
-  title = 'my-first-app';
+  title = 'my-second-app';
+  username: string = 'Initial Username';
+  allowReset = true;
+
+  checkInput() {
+    this.allowReset = this.username == '' ?  true : false;
+  }
+
+  restUsername(){
+
+    this.username = '';
+
+  }
 }
