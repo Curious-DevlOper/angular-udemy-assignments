@@ -2,19 +2,14 @@
 <div class="container">
   <div class="row">
     <div class="col-xs-12">
-      <h3 class="mt-2">3rd assighnment</h3>
+      <h3 class="mt-2">Game Control assighnment</h3>
+
       <hr>
-     
-      <button class="btn btn-primary" (click)="togglePass($event)">Display details</button>
-       <p class="mt-3" *ngIf="!isPassHidden">secret password = {{pass}} </p>
-       <div>
-        <ul>
-          <li *ngFor="let log of logs; let i = index" 
-          [ngStyle]="{'backgroundColor': i >= blueBackgroundIndex ? 'blue' : 'transparent'}"
-        [ngClass]="{'white-color': i >= blueBackgroundIndex} ">
-          {{ log }}</li>
-        </ul>
-      </div>
+    <app-game-control (numberGenerated)="onNumberGenerated($event)"></app-game-control>
+    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
+    <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+
+      
 
     </div>  
  
