@@ -1,17 +1,32 @@
 
 <div class="container">
   <div class="row">
-    <div class="col-xs-12">
-      <h3 class="mt-2">Game Control assighnment</h3>
+    <div class="col-xs-12 mt-5">
+      <button class="btn btn-primary"
+      (click)="onlyOdd=!onlyOdd">Only show odd numbers</button>
+      <br><br>
+      <ul class="list-group">
+        <div *ngIf="onlyOdd">
+          <li class="list-group-item"
+          [ngClass] = "{odd: oddnum % 2 !==0}"
+          [ngStyle]="{backgroundColor: oddnum % 2 !== 0 ? 'blue' : 'transparent'}"
 
-      <hr>
-    <app-game-control (numberGenerated)="onNumberGenerated($event)"></app-game-control>
-    <app-odd *ngFor="let oddNumber of oddNumbers" [number]="oddNumber"></app-odd>
-    <app-even *ngFor="let evenNumber of evenNumbers" [number]="evenNumber"></app-even>
+        *ngFor="let oddnum of oddNumbers">
+        {{oddnum}}
 
-      
+          </li>
+        </div >
+        <div *ngIf="!onlyOdd">
+          <li class="list-group-item"
+          [ngStyle]="{backgroundColor: evenNum % 2 !== 0 ? 'blue' : 'transparent'}"
 
-    </div>  
+          [ngClass] = "{odd: evenNum % 2 !==0}"
+          *ngFor="let evenNum of evenNumbers">
+          {{evenNum}}
+
+          </li>
+        </div>  
+      </ul>
  
   </div>
 </div>
