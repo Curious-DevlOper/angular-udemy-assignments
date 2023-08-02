@@ -16,7 +16,7 @@
 
           </li>
         </div >
-        <div *ngIf="!onlyOdd">
+        <!-- <div *ngIf="!onlyOdd">
           <li class="list-group-item"
           [ngStyle]="{backgroundColor: evenNum % 2 !== 0 ? 'lightblue' : 'transparent'}"
 
@@ -25,7 +25,31 @@
           {{evenNum}}
 
           </li>
-        </div>  
+        </div>
+          
+        <ng-template  [ngIf] ="!onlyOdd">
+           here we have the content we conditionaly want to render 
+          <div >
+            <li class="list-group-item"
+            [ngStyle]="{backgroundColor: evenNum % 2 !== 0 ? 'lightblue' : 'transparent'}"
+  
+            [ngClass] = "{odd: evenNum % 2 !==0}"
+            *ngFor="let evenNum of evenNumbers">
+            {{evenNum}}
+  
+            </li>
+          </div>
+        </ng-template> -->
+        <div *appUnless="onlyOdd">
+          <li class="list-group-item"
+          [ngStyle]="{backgroundColor: evenNum % 2 !== 0 ? 'lightblue' : 'transparent'}"
+
+          [ngClass] = "{odd: evenNum % 2 !==0}"
+          *ngFor="let evenNum of evenNumbers">
+          {{evenNum}}
+
+          </li>
+        </div>
       </ul>
       <p appBasicHighlight  class="mt-5">style me with basic directive</p>
       <p appBetterHighlight [defaultColor]="'lightgray'" [highlightColor]="'red'"
