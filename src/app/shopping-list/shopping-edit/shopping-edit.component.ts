@@ -10,7 +10,7 @@ import { Ingredient } from 'src/app/shared/ingredient-model';
 export class ShoppingEditComponent {
   @ViewChild('nameInput', { static: true }) nameInputRef: ElementRef;
   @ViewChild('amountInput', { static: true } ) amountInputRef: ElementRef;
-
+ 
   @Output() ingredientAdded= new EventEmitter<Ingredient>(); //{name: string, amount: number}
 
   onAddItem() {

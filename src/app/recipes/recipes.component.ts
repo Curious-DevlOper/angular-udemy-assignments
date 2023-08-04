@@ -8,6 +8,9 @@ import { Recipe } from './recipe.model';
 })
 export class RecipesComponent {
   selectedRecipe : Recipe ;
-  
+
+  onselectedRecipe (element: Recipe){
+    this.selectedRecipe = element;
+  }
 
 }
