@@ -1,0 +1,26 @@
+<!-- shopping list edit should be desplayed like an input
+so later we can add to it -->
+<div class="row">
+    <div class="col-12">
+      <form>
+        <div class="row">
+          <div class="col-sm-5 form-group">
+            <label for="name">Name</label>
+            <input type="text" id="name" class="form-control" #nameInput>
+          </div>
+          <div class="col-sm-2 form-group">
+            <label for="amount">amount</label>
+            <input type="number" id="amount" class="form-control" #amountInput>
+          </div>
+        </div>
+        <div class="row mt-3">
+          <div class="col-12 ">
+            <button class="btn btn-success me-2" type="submit" (click)="onAddItem()">Add</button>
+            <button class="btn btn-danger me-2" type="button">Delete</button>
+            <button class="btn btn-primary" type="button">Clear</button>
+          </div>
+        </div>
+      </form>
+    </div>
+  </div>
+  
