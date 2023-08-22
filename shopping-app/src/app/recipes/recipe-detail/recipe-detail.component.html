@@ -1,6 +1,7 @@
 <div class="row">
+    <p>recipe detail component</p>
     <div class="col-xs-12">
-        <img [src]="recipe.imagePath" alt={{recipe.name}}
+        <img [src]="recipe.imagePath" alt="food image"
          class="img-responsive" style="max-height: 300px;">
     </div>
 </div>
@@ -15,7 +16,7 @@
             <button type="button" class="btn btn-primary dropdown-toggle" 
             id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">Manage Recipe<span class='caret'></span></button>
             <ul class="dropdown-menu" aria-labelledby="dropdownMenuButton">
-                <li><a href="#" class="dropdown-item">Add Ingridient to Shopping list</a></li>
+                <li><a (click)="onAddToShoppinList()" class="dropdown-item">Add Ingridient to Shopping list</a></li>
                 <li><a href="#" class="dropdown-item">Edit Recipe</a></li>
                 <li><a href="#" class="dropdown-item">Delete Recipe</a></li>
 
@@ -31,6 +32,11 @@
 </div>
 <div class="row">
     <div class="col-xs-12">
-        ingridient: 
+        <ul class="list-group">
+            <li class="list-group-item"
+            *ngFor="let ingredient of recipe.ingredients">
+            {{ingredient.name}} - {{ingredient.amount}}
+        </li>
+        </ul>
     </div>
 </div>
